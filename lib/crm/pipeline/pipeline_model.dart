@@ -108,6 +108,9 @@ class PipelineModel extends FlutterFlowModel<PipelineWidget> {
   String? Function(BuildContext, String?)? valorpersTextControllerValidator;
   // Stores action output result for [Custom Action - reorderItems] action in ListView widget.
   List<String>? listaordenada;
+  // PageController for mobile pipeline view.
+  PageController? mobilePageController;
+  int mobileCurrentPage = 0;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController12;
@@ -156,6 +159,7 @@ class PipelineModel extends FlutterFlowModel<PipelineWidget> {
 
     textFieldFocusNode?.dispose();
     textController12?.dispose();
+    mobilePageController?.dispose();
   }
 
   /// Action blocks.

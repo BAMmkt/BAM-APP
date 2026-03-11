@@ -324,6 +324,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PipelineWidget(),
         ),
         FFRoute(
+          name: PipelinePreviewWidget.routeName,
+          path: PipelinePreviewWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => PipelinePreviewWidget(),
+        ),
+        FFRoute(
           name: SolveWidget.routeName,
           path: SolveWidget.routePath,
           builder: (context, params) => SolveWidget(),
