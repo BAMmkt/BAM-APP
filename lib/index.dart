@@ -54,6 +54,6 @@ export '/master/master_relatorio/master_relatorio_widget.dart'
 export '/crm/crm/crm_widget.dart' show CrmWidget;
 export '/crm/crmperfil/crmperfil_widget.dart' show CrmperfilWidget;
 export '/crm/pipeline/pipeline_widget.dart' show PipelineWidget;
-export '/crm/pipeline/pipeline_preview_widget.dart' show PipelinePreviewWidget;
+export '/crm/crmdashboard/crmdashboard_widget.dart' show CrmdashboardWidget;
 export '/solve/solve_widget.dart' show SolveWidget;
 export '/solve_copy/solve_copy_widget.dart' show SolveCopyWidget;

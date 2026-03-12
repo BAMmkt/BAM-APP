@@ -324,11 +324,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PipelineWidget(),
         ),
         FFRoute(
-          name: PipelinePreviewWidget.routeName,
-          path: PipelinePreviewWidget.routePath,
+          name: CrmdashboardWidget.routeName,
+          path: CrmdashboardWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => PipelinePreviewWidget(),
+          builder: (context, params) => CrmdashboardWidget(),
         ),
+
         FFRoute(
           name: SolveWidget.routeName,
           path: SolveWidget.routePath,

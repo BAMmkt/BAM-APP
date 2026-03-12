@@ -1848,6 +1848,51 @@ class _MenuWidgetState extends State<MenuWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
+                          if (valueOrDefault(currentUserDocument?.type, '') ==
+                              'master')
+                            FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed(CrmdashboardWidget.routeName);
+                              },
+                              text: 'Dashboard CRM',
+                              icon: Icon(
+                                Icons.bar_chart_rounded,
+                                size: 15.0,
+                              ),
+                              options: FFButtonOptions(
+                                height: 50.0,
+                                padding: EdgeInsets.all(8.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
                           if (valueOrDefault<bool>(
                               currentUserDocument?.admin, false))
                             FFButtonWidget(

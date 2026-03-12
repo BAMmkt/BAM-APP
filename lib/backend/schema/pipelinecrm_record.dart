@@ -40,6 +40,16 @@ class PipelinecrmRecord extends FirestoreRecord {
   List<ContascconvidadasStruct> get responsavel => _responsavel ?? const [];
   bool hasResponsavel() => _responsavel != null;
 
+  // "coluna_venda" field.
+  String? _colunaVenda;
+  String get colunaVenda => _colunaVenda ?? '';
+  bool hasColunaVenda() => _colunaVenda != null;
+
+  // "coluna_perdido" field.
+  String? _colunaPerdido;
+  String get colunaPerdido => _colunaPerdido ?? '';
+  bool hasColunaPerdido() => _colunaPerdido != null;
+
   void _initializeFields() {
     _colunas = getDataList(snapshotData['colunas']);
     _relatedId = snapshotData['related_id'] as String?;
@@ -49,6 +59,8 @@ class PipelinecrmRecord extends FirestoreRecord {
       snapshotData['responsavel'],
       ContascconvidadasStruct.fromMap,
     );
+    _colunaVenda = snapshotData['coluna_venda'] as String?;
+    _colunaPerdido = snapshotData['coluna_perdido'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -88,11 +100,15 @@ class PipelinecrmRecord extends FirestoreRecord {
 Map<String, dynamic> createPipelinecrmRecordData({
   String? relatedId,
   String? userId,
+  String? colunaVenda,
+  String? colunaPerdido,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'related_id': relatedId,
       'user_id': userId,
+      'coluna_venda': colunaVenda,
+      'coluna_perdido': colunaPerdido,
     }.withoutNulls,
   );
 
@@ -110,7 +126,9 @@ class PipelinecrmRecordDocumentEquality implements Equality<PipelinecrmRecord> {
         e1?.userId == e2?.userId &&
         listEquality.equals(
             e1?.tiposcamposadicionais, e2?.tiposcamposadicionais) &&
-        listEquality.equals(e1?.responsavel, e2?.responsavel);
+        listEquality.equals(e1?.responsavel, e2?.responsavel) &&
+        e1?.colunaVenda == e2?.colunaVenda &&
+        e1?.colunaPerdido == e2?.colunaPerdido;
   }
 
   @override
@@ -119,7 +137,9 @@ class PipelinecrmRecordDocumentEquality implements Equality<PipelinecrmRecord> {
         e?.relatedId,
         e?.userId,
         e?.tiposcamposadicionais,
-        e?.responsavel
+        e?.responsavel,
+        e?.colunaVenda,
+        e?.colunaPerdido
       ]);
 
   @override
